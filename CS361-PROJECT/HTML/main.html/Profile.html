@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- FILE: profile.html -->
+<!-- This is the edit profile page -->
+<!-- NOTE: in real use profile.php handles saving and deleting -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+
+    <!-- link to our CSS file -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- link to our JavaScript validation file -->
+    <script src="validate.js"></script>
+</head>
+<body>
+
+    <!-- top navigation bar -->
+    <header>
+        <h1>SEU Course Registration</h1>
+        <nav>
+            <a href="index.php">Home</a>
+            <a href="courses.php">Courses</a>
+            <a href="history.php">My Enrollments</a>
+            <a href="logout.php">Logout</a>
+        </nav>
+    </header>
+
+    <!-- main content -->
+    <div class="container">
+        <h2>Edit Profile</h2>
+
+        <!--
+            action="profile.php" sends the form to profile.php
+            profile.php then runs UPDATE on the users table in the database
+            onsubmit="return checkEdit()" runs our JS check before sending
+        -->
+        <form action="profile.php" method="POST" onsubmit="return checkEdit()">
+
+            <label>Name:</label>
+            <!-- value is pre-filled with the current name from the database -->
+            <input type="text" id="name" name="name" value="John Smith">
+
+            <label>Email:</label>
+            <!-- value is pre-filled with the current email from the database -->
+            <input type="email" id="email" name="email" value="john@email.com">
+
+            <!-- name="update" tells profile.php this is a save request not a delete -->
+            <input type="submit" name="update" value="Save Changes">
+        </form>
+
+        <br><br>
+        <hr>
+        <br>
+
+        <p>Want to delete your account? This will also remove all your enrollments.</p>
+        <br>
+
+        <!--
+            this is a separate form just for deleting the account
+            action="profile.php" sends to profile.php
+            profile.php checks for name="delete" and runs DELETE on the database
+            the confirm popup in onsubmit asks the user before it deletes
+        -->
+        <form action="profile.php" method="POST"
+              onsubmit="return confirm('Are you sure? This cannot be undone.')">
+            <input type="submit" name="delete" value="Delete My Account"
+                   style="background-color: #c0392b;">
+        </form>
+
+    </div>
+
+    <!-- bottom footer -->
+    <footer>
+        <p>&copy;2026 SEU Course Registration System. All right reserverd.</p>
+    </footer>
+
+</body>
+</html>

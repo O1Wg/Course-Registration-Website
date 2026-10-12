@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- FILE: history.html -->
+<!-- This shows the user's enrolled courses -->
+<!-- NOTE: in real use history.php replaces this and pulls data from the database -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Enrollments</title>
+
+    <!-- link to our CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- top navigation bar -->
+    <header>
+        <h1>SEU Course Registration</h1>
+        <nav>
+            <a href="index.php">Home</a>
+            <a href="courses.php">Courses</a>
+            <a href="profile.php">Edit Profile</a>
+            <a href="logout.php">Logout</a>
+        </nav>
+    </header>
+
+    <!-- main content -->
+    <div class="container">
+        <h2>My Enrollments</h2>
+
+        <!-- table showing all enrolled courses -->
+        <table>
+            <tr>
+                <th>Course</th>
+                <th>Teacher</th>
+                <th>Date Enrolled</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>Intro to PHP</td>
+                <td>Mr. Smith</td>
+                <td>2024-01-15</td>
+                <!--
+                    the cancel link goes to history.php
+                    and passes the enrollment id using ?cancel=1
+                    history.php then deletes that row from the database
+                -->
+                <td><a href="history.php?cancel=1"
+                       onclick="return confirm('Are you sure you want to cancel this enrollment?')">
+                    Cancel
+                </a></td>
+            </tr>
+            <tr>
+                <td>Web Design</td>
+                <td>Ms. Johnson</td>
+                <td>2024-01-20</td>
+                <td><a href="history.php?cancel=2"
+                       onclick="return confirm('Are you sure you want to cancel this enrollment?')">
+                    Cancel
+                </a></td>
+            </tr>
+        </table>
+
+    </div>
+
+    <!-- bottom footer -->
+    <footer>
+        <p>&copy;2026 SEU Course Registration System. All right reserverd.</p>
+    </footer>
+
+</body>
+</html>

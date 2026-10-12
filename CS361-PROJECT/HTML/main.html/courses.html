@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- FILE: courses.html -->
+<!-- This shows the list of courses -->
+<!-- NOTE: in real use, courses.php replaces this and pulls courses from the database -->
+<!-- This file is just to show the layout and structure -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+
+    <!-- link to our CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- top navigation bar -->
+    <header>
+        <h1>SEU Course Registration</h1>
+        <nav>
+            <a href="index.php">Home</a>
+            <a href="history.php">My Enrollments</a>
+            <a href="profile.php">Edit Profile</a>
+            <a href="logout.php">Logout</a>
+        </nav>
+    </header>
+
+    <!-- main content -->
+    <div class="container">
+        <h2>Available Courses</h2>
+
+        <!-- course card 1 -->
+        <!-- the enroll link passes the course id to enroll.php using ?id=1 -->
+        <div class="course-card">
+            <h3>Intro to PHP</h3>
+            <p>Learn the basics of PHP programming.</p>
+            <p>Teacher: Mr. Smith</p>
+            <a href="enroll.php?id=1">Enroll in this course</a>
+        </div>
+
+        <!-- course card 2 -->
+        <div class="course-card">
+            <h3>Web Design</h3>
+            <p>HTML and CSS for beginners.</p>
+            <p>Teacher: Ms. Johnson</p>
+            <a href="enroll.php?id=2">Enroll in this course</a>
+        </div>
+
+        <!-- course card 3 -->
+        <div class="course-card">
+            <h3>Database Basics</h3>
+            <p>Learn how to use MySQL.</p>
+            <p>Teacher: Mr. Brown</p>
+            <a href="enroll.php?id=3">Enroll in this course</a>
+        </div>
+
+    </div>
+
+    <!-- bottom footer -->
+    <footer>
+        <p>&copy;2026 SEU Course Registration System. All right reserverd.</p>
+    </footer>
+
+</body>
+</html>

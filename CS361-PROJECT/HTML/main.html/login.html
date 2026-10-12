@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- FILE: login.html -->
+<!-- This is the login page -->
+<!-- NOTE: the form action points to login.php which checks the password -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <!-- link to our CSS file -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- link to our JavaScript validation file -->
+    <script src="validate.js"></script>
+</head>
+<body>
+
+    <!-- top navigation bar -->
+    <header>
+        <h1>SEU Course Registration</h1>
+        <nav>
+            <a href="index.php">Home</a>
+            <a href="register.php">Register</a>
+        </nav>
+    </header>
+
+    <!-- main content -->
+    <div class="container">
+        <h2>Login</h2>
+
+        <!--
+            action="login.php" sends the form data to login.php
+            onsubmit="return checkLogin()" runs JS check before sending
+        -->
+        <form action="login.php" method="POST" onsubmit="return checkLogin()">
+
+            <label>Email:</label>
+            <input type="email" id="email" name="email" placeholder="you@email.com">
+
+            <label>Password:</label>
+            <input type="password" id="password" name="password" placeholder="Your password">
+
+            <input type="submit" value="Login">
+        </form>
+
+        <br>
+        <p>No account yet? <a href="register.php">Register</a></p>
+    </div>
+
+    <!-- bottom footer -->
+    <footer>
+        <p>&copy;2026 SEU Course Registration System. All right reserverd.</p>
+    </footer>
+
+</body>
+</html>

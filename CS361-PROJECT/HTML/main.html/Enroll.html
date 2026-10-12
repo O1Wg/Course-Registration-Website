@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!-- FILE: enroll.html -->
+<!-- This is the enroll confirmation page -->
+<!-- NOTE: in real use enroll.php handles this and saves to the database -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enroll</title>
+
+    <!-- link to our CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- top navigation bar -->
+    <header>
+        <h1>SEU Course Registration</h1>
+        <nav>
+            <a href="index.php">Home</a>
+            <a href="courses.php">Courses</a>
+            <a href="history.php">My Enrollments</a>
+            <a href="logout.php">Logout</a>
+        </nav>
+    </header>
+
+    <!-- main content -->
+    <div class="container">
+        <h2>Enroll in Course</h2>
+
+        <!-- this message box shows after enrolling - hidden by default -->
+        <!-- in the PHP version this shows automatically after the form is submitted -->
+        <div class="msg">
+            You have been enrolled successfully.
+        </div>
+
+        <!-- shows the course details -->
+        <div class="course-card">
+            <h3>Intro to PHP</h3>
+            <p>Learn the basics of PHP programming.</p>
+            <p>Teacher: Mr. Smith</p>
+        </div>
+
+        <!--
+            action="enroll.php" sends the form to enroll.php
+            enroll.php then saves the enrollment to the database
+            the hidden input sends the course id along with the form
+        -->
+        <form action="enroll.php" method="POST">
+            <input type="hidden" name="course_id" value="1">
+            <input type="submit" value="Confirm Enrollment">
+        </form>
+
+        <br>
+        <p><a href="courses.php">Back to courses</a></p>
+    </div>
+
+    <!-- bottom footer -->
+    <footer>
+        <p>&copy;2026 SEU Course Registration System. All right reserverd.</p>
+    </footer>
+
+</body>
+</html>
